@@ -1,14 +1,14 @@
 // 主導航滑動菜單
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const menuButton = document.querySelector('.menu-button');
     const menu = document.querySelector('.menu');
-    menuButton.addEventListener('click', function() {
+    menuButton.addEventListener('click', function () {
         menu.classList.toggle('menu-open');
     });
 });
 
-// 滾動效果
-window.addEventListener('scroll', function() {
+// 已有滾動動畫 - 將visible類加到合適的section
+window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('.fade-in-section');
     const triggerPoint = window.innerHeight / 5 * 4;
 
@@ -23,10 +23,13 @@ window.addEventListener('scroll', function() {
 });
 
 // 滑動輪播圖
+// 修改輪播圖的顯示邏輯，讓幻燈片有平滑過渡
 let currentSlide = 0;
 
 function showSlide(slideIndex) {
     const slides = document.querySelectorAll('.carousel-slide');
+    slides.forEach(slide => slide.classList.remove('active'));
+
     if (slideIndex >= slides.length) {
         currentSlide = 0;
     } else if (slideIndex < 0) {
@@ -35,21 +38,19 @@ function showSlide(slideIndex) {
         currentSlide = slideIndex;
     }
 
-    slides.forEach((slide, index) => {
-        slide.style.display = index === currentSlide ? 'block' : 'none';
-    });
+    slides[currentSlide].classList.add('active');
 }
 
-document.querySelector('.next-slide').addEventListener('click', function() {
+document.querySelector('.next-slide').addEventListener('click', function () {
     showSlide(currentSlide + 1);
 });
 
-document.querySelector('.prev-slide').addEventListener('click', function() {
+document.querySelector('.prev-slide').addEventListener('click', function () {
     showSlide(currentSlide - 1);
 });
 
 // 表單提交與驗證
-document.querySelector('form').addEventListener('submit', function(event) {
+document.querySelector('form').addEventListener('submit', function (event) {
     const name = document.querySelector('input[name="name"]');
     const email = document.querySelector('input[name="email"]');
     let valid = true;
@@ -70,7 +71,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
 });
 
 // 動態加載內容
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const content = document.querySelector('.more-content');
     if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
         loadMoreContent();
