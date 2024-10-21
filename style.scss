@@ -1,4 +1,7 @@
 // 全局
+$primary-color: #f56a79; // pinkish color
+$bg-color: #fdfdfd; // background light color
+
 * {
     margin: 0;
     padding: 0;
@@ -7,198 +10,79 @@
 
 body {
     font-family: "Arial", sans-serif;
-    line-height: 1.6;
+    background-color: $bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
+.features-section {
+    position: relative;
+    text-align: center;
+    color: black;
+    width: 100%;
+    height: 100%;
 
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-h1,
-h2,
-h3 {
-    margin-bottom: 20px;
-}
-
-// 檔頭區
-.header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-
-    .logo {
-        float: left;
-        font-size: 24px;
-        a {
-            color: white;
-            font-weight: bold;
+    .features-text {
+        z-index: 1;
+        position: relative;
+        h1 {
+            font-size: 48px;
+            letter-spacing: 2px;
+        }
+        h2 {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+        p {
+            font-size: 18px;
+            color: gray;
         }
     }
 
-    .nav {
-        float: right;
-        ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            li {
-                a {
-                    color: white;
-                    font-weight: bold;
-                    &:hover {
-                        color: #ff9800;
-                    }
-                }
+    .circle-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle at top left,
+                rgba(255, 255, 255, 0.8) 0%,
+                rgba(255, 132, 152, 0.7) 40%,
+                rgba(255, 51, 51, 0.6) 60%,
+                rgba(255, 0, 70, 0.4) 100%
+            );
+            opacity: 0.6;
+            transition: transform 2s ease-in-out;
+            will-change: transform, border-radius;
+
+            &.large {
+                width: 400px;
+                height: 400px;
+                top: 30%;
+                left: 35%;
             }
-        }
-    }
-}
 
-// 英勇事區
-.hero {
-    background-color: #f4f4f4;
-    padding: 100px 0;
-    text-align: center;
+            &.medium {
+                width: 300px;
+                height: 300px;
+                top: 40%;
+                right: 5%;
+            }
 
-    h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
-    }
-
-    p {
-        font-size: 20px;
-        margin-bottom: 40px;
-    }
-
-    // 淡入效果
-    .fade-in-section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition:
-            opacity 0.6s ease-out,
-            transform 0.6s ease-out;
-
-        &.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    // CTA按鈕效果
-    .cta-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #ff9800;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition:
-            background-color 0.3s ease-in-out,
-            transform 0.3s ease-in-out;
-
-        &:hover {
-            background-color: #e68900;
-        }
-
-        &:active {
-            transform: scale(0.98);
-            background-color: #d07800;
-        }
-    }
-
-    // 幻燈片輪播
-    .carousel-slide {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-
-        &.active {
-            display: block;
-            opacity: 1;
-        }
-    }
-}
-
-// 特點區
-.features {
-    background-color: #fff;
-    padding: 80px 0;
-
-    h2 {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .feature-item {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-}
-
-// 服務區
-.services {
-    background-color: #f4f4f4;
-    padding: 80px 0;
-
-    h2 {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .service-item {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-}
-
-// 專案區
-.projects {
-    background-color: #fff;
-    padding: 80px 0;
-
-    h2 {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .project-item {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-}
-
-// 頁尾區
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-
-    .footer-nav {
-        margin-top: 20px;
-        ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-
-            li {
-                a {
-                    color: white;
-                    font-weight: bold;
-                    &:hover {
-                        color: #ff9800;
-                    }
-                }
+            &.small {
+                width: 200px;
+                height: 200px;
+                bottom: 10%;
+                left: 10%;
             }
         }
     }

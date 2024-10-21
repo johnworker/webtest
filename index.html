@@ -1,103 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bravis International</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bravis Features</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#">Bravis International</a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="features-section">
+        <div class="circle-background">
+            <div class="circle large" id="large-circle"></div>
+            <div class="circle medium" id="medium-circle"></div>
+            <div class="circle small" id="small-circle"></div>
         </div>
-    </header>
+        <div class="features-text">
+            <h1>THE TOTAL BRANDING COMPANY</h1>
+            <h2>OUR FEATURES</h2>
+            <p>私たちの強み</p>
+        </div>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero" fade-in-section>
-        <div class="container">
-            <h1>Welcome to Bravis International</h1>
-            <p>Your Total Branding Solution</p>
-            <a href="#features" class="cta-button">Learn More</a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features" fade-in-section>
-        <div class="container">
-            <h2>Our Features</h2>
-            <div class="feature-item">
-                <h3>Corporate Branding</h3>
-                <p>We help businesses create powerful and recognizable brands.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Product Branding</h3>
-                <p>Bring your products to life with a distinct and compelling identity.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Digital Solutions</h3>
-                <p>Integrating digital innovation into your branding strategies.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-item">
-                <h3>Brand Strategy</h3>
-                <p>Developing long-term strategies for sustainable growth.</p>
-            </div>
-            <div class="service-item">
-                <h3>Design Creative</h3>
-                <p>Creative design that embodies the brand’s essence.</p>
-            </div>
-            <div class="service-item">
-                <h3>Digital Branding</h3>
-                <p>Leveraging the latest digital trends to enhance brand presence.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Our Projects</h2>
-            <div class="project-item">
-                <h3>Pokka Sapporo Merger</h3>
-                <p>A successful rebranding of a major food and beverage company.</p>
-            </div>
-            <div class="project-item">
-                <h3>Global Expansion Campaign</h3>
-                <p>Helping businesses reach international markets with localized branding.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Bravis International. All rights reserved.</p>
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 </body>
+
 </html>
