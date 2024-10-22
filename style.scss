@@ -17,6 +17,8 @@ body {
     height: 100vh;
 }
 
+
+// 特點區
 .features-section {
     position: relative;
     text-align: center;
@@ -49,6 +51,7 @@ body {
         height: 100%;
         z-index: 0;
         overflow: hidden;
+        filter: url(#goo); // Apply the gooey effect
 
         .circle {
             position: absolute;
@@ -56,7 +59,7 @@ body {
             background: radial-gradient(
                 circle at top left,
                 rgba(255, 255, 255, 0.8) 0%,
-                rgba(255, 132, 152, 0.7) 40%,
+                rgba(255, 101, 127, 0.83) 40%,
                 rgba(255, 21, 21, 0.6) 60%,
                 rgba(255, 0, 68, 0.6) 100%
             );
