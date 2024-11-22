@@ -1,208 +1,112 @@
-// 選單效果
-$(".menu_btn").click(function () {
-  $(".menu_wrap").toggleClass("active");
-  $(this).toggleClass("active");
-});
-
-
-// 背景影片切換
-$(document).ready(function () {
-  var video1 = document.getElementById('backgroundVideo1');
-  var video2 = document.getElementById('backgroundVideo2');
-  var video3 = document.getElementById('backgroundVideo3');
-  var videos = [video1, video2, video3];
-  var currentVideoIndex = 0;
-
-  function switchVideo() {
-    var currentVideo = videos[currentVideoIndex];
-    var nextVideoIndex = (currentVideoIndex + 1) % videos.length;
-    var nextVideo = videos[nextVideoIndex];
-
-    // 切換顯示狀態
-    currentVideo.classList.remove('active');
-    currentVideo.classList.add('inactive');
-    nextVideo.classList.remove('inactive');
-    nextVideo.classList.add('active');
-
-    // 重設下一個影片並播放
-    nextVideo.currentTime = 0;
-    nextVideo.play();
-
-    // 更新當前影片索引
-    currentVideoIndex = nextVideoIndex;
-  }
-
-  // 當前影片播放結束時觸發切換
-  videos.forEach(function (video) {
-    video.addEventListener('ended', switchVideo);
-  });
-
-  // 確保影片自動播放
-  videos[currentVideoIndex].play();
-});
-
-// 效果影片區
-// 新增影片區塊滾動動畫
-document.addEventListener('DOMContentLoaded', function () {
-  const scrollVideos = gsap.utils.toArray('.scroll_video');
-  const totalSections = scrollVideos.length;
-
-  scrollVideos.forEach((video, i) => {
-    ScrollTrigger.create({
-      trigger: '.scroll_video_section',
-      start: () => (i * 100) + 'vh',
-      end: () => ((i + 1) * 100) + 'vh',
-      scrub: true,
-      onEnter: () => switchScrollVideo(i),
-      onEnterBack: () => switchScrollVideo(i),
+// 捲動效果
+$(function () {
+    //捲動至top0的位置
+    $("#arrow").click(function () {
+        $("html,body").animate({
+            scrollTop: 0
+        }, 1000);
     });
-  });
+    //指定捲軸位置淡出淡入
+    // $(window).scroll(function () {
+        // if ($(this).scrollTop() > 200) {
+            // $('#gotop').stop().fadeTo('fast', 1);
+        // } else {
+            // $('#gotop').stop().fadeOut('fast');
+        // }
+    // });
+});
 
-  function switchScrollVideo(index) {
-    scrollVideos.forEach((video, i) => {
-      if (i === index) {
-        video.classList.add('active');
-        video.classList.remove('inactive');
-        video.play();
-      } else {
-        video.classList.add('inactive');
-        video.classList.remove('active');
-        video.pause();
-        video.currentTime = 0;
-      }
+
+// 使用者滑鼠滾動時 停止所有動畫
+$("html").on("mousewheel", function () {
+    $("html").stop();
+});
+
+var arrow = $("#arrow")
+arrow.fadeOut();
+
+// 箭頭顯示與隱藏效果
+$(window).scroll(function () {
+    var windowTop = $(this).scrollTop();
+    // console.log("視窗的上方:" + windowTop)
+
+    var arrowTop = arrow.attr("data-st-top");
+    var arrowTime = arrow.attr("data-st-time");
+    var arrowTimeInt = parseInt(arrowTime); //將時間轉為數字(整數)
+
+    //console.log(arrowTop)
+    //console.log(arrowTime)
+
+
+    //如果 視窗位置 大於等於 箭頭上方 就 淡入
+    if (windowTop >= arrowTop) arrow.stop().fadeIn(arrowTimeInt);
+    //否則就淡出
+    else arrow.stop().fadeOut(arrowTimeInt)
+});
+
+// 動畫區域
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+const slideInterval = 3000; 
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
     });
-  }
-});
+}
 
-// 宣傳圖片效果區(卷軸移動換圖效果)
-// 初始化 GSAP 和 ScrollTrigger
-gsap.utils.toArray(".comparisonSection").forEach((section) => {
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "center center",
-      // makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
-      end: () => "+=" + section.offsetWidth,
-      scrub: true,
-      pin: true,
-      anticipatePin: 1
-    },
-    defaults: { ease: "none" }
-  });
-  // animate the container one way...
-  tl.fromTo(
-    section.querySelector(".afterImage"),
-    { xPercent: 100, x: 0 },
-    { xPercent: 0 }
-  )
-    // ...and the image the opposite way (at the same time)
-    .fromTo(
-      section.querySelector(".afterImage img"),
-      { xPercent: -100, x: 0 },
-      { xPercent: 0 },
-      0
-    );
-});
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
 
-// 示例：添加動畫效果
-document.addEventListener('DOMContentLoaded', function () {
-  const logo = document.querySelector('.block_intro .logo');
-  const options = {
-    threshold: 0.5
-  };
+showSlide(currentIndex); // 顯示第一張
+setInterval(nextSlide, slideInterval); // 每4秒換一張
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-        observer.unobserve(entry.target);
-      }
+// 平滑滾動至對應區域
+$(document).ready(function() {
+    $('a[href^="#"]').click(function(event) {
+        event.preventDefault();
+        
+        var target = $($(this).attr('href'));
+        
+        if(target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000); // 1000 表示動畫持續時間，可依需求調整
+        }
     });
-  }, options);
-
-  observer.observe(logo);
 });
 
-// Q&A開合選單
-$(document).ready(function () {
-  // FAQ 切換
-  $('.QA_question').click(function () {
-    $(this).next('.QA_answer').slideToggle();
-    $(this).parent('.QA_item').siblings().find('.QA_answer').slideUp();
-  });
+// 輪播器
+$(document).ready(function() {
+    $('.portfolio-carousel').slick({
+        infinite: true,        // 無限捲動
+        slidesToShow: 1,       // 一次顯示的數量
+        slidesToScroll: 1,     // 一次滾動數量
+        autoplay: true,        // 開啟自動撥放
+        autoplaySpeed: 3000,   // 自動撥放速度
+        arrows: true,          // 不顯示箭頭
+        dots: false             // 不顯示點點
+    });
 });
 
-// 影像循環區
-document.addEventListener('DOMContentLoaded', function () {
-  const moveContainer = document.querySelector('.move_container');
-  const moveItems = Array.from(document.querySelectorAll('.move_item'));
-  const containerWidth = moveContainer.clientWidth;
-  const itemWidth = moveItems[0].clientWidth;
-  const totalItems = moveItems.length;
 
-  // 複製所有項目並附加到容器末尾以實現無縫循環
-  moveItems.forEach(item => {
-    const clone = item.cloneNode(true);
-    moveContainer.appendChild(clone);
-  });
-
-  // 計算動畫持續時間
-  const animationDuration = 40; // 動畫持續時間（秒），根據需要調整
-  moveContainer.style.animationDuration = `${animationDuration}s`;
-
-  // 動態生成@keyframes，確保無縫循環
-  const keyframes = `
-      @keyframes moveLeft {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-${itemWidth}px * ${totalItems})); }
-      }
-  `;
-  const styleSheet = document.createElement("style");
-  styleSheet.type = "text/css";
-  styleSheet.innerText = keyframes;
-  document.head.appendChild(styleSheet);
-
-  // 動畫結束時重置動畫以達到無縫循環
-  moveContainer.addEventListener('animationiteration', () => {
-    moveContainer.style.animation = 'none';
-    moveContainer.offsetHeight; /* 觸發重繪 */
-    moveContainer.style.animation = null;
-  });
+// 漢堡選單
+document.querySelector('.hamburger-menu').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
 });
 
-// 點擊縮圖切換大圖
-$(document).ready(function () {
-  $('.thumbnail').click(function () {
-    var newSrc = $(this).data('src');
-    $('#main_image').attr('src', newSrc);
-    $('.thumbnail').removeClass('active');
-    $(this).addClass('active');
-  });
-});
 
-// 初始化圖片滑動
-$(document).ready(function () {
-  // 點擊縮圖切換大圖
-  $('.thumbnail').click(function () {
-    var newSrc = $(this).data('src');
-    $('#mainImage').attr('src', newSrc);
-    $('.thumbnail').removeClass('active');
-    $(this).addClass('active');
-  });
-});
+// 設置
+const heroSection = document.querySelector('.hero-section');
+let colors = ['#4caf50', '#81c784', '#ff9800'];
+let currentColor = 0;
 
-// 圖片滑動效果
-$(document).ready(function () {
-  $('.sell_product_gallery').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: false,
-    arrows: true,
-  });
-});
-
-// 新增至購物車按鈕功能
-document.querySelector('.add_to_cart').addEventListener('click', function () {
-  alert('商品已加入購物車');
-});
+setInterval(() => {
+    currentColor = (currentColor + 1) % colors.length;
+    heroSection.style.background = colors[currentColor];
+}, 5000);

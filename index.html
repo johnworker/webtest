@@ -3,255 +3,349 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>日式棉被網站</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>兔嘲媒體整合行銷</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link href="./style.css" rel="stylesheet" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- slick CDN -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P8VER0LG8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8P8VER0LG8');
+    </script>
+
+    <meta name="google-site-verification" content="6NNHAyzslowOZx_wXi6K7FRlzaqn-tVHoS--OV4QEEc" />
 </head>
 
 <body>
-    <header class="header_load">
-        <div class="logo_box">
-            <img src="./images/font_logo.png" alt="">
-        </div>
-        <div class="gavn">
-            <div class="menu_wrap">
-                <ul>
-                    <li>
-                        <a href="./index.html">首頁</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="./select.html">如何選擇</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="./brand.html" target="_blank">品牌陣容</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="./product_lineup.html" target="_blank">商品陣容</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="./store_list.html">店鋪列表</a>
-                    </li>
-                </ul>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="#hero"><img src="./img/LOGO06.png" alt=""></a>
             </div>
-            <div class="menu_btn">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
+            <hr>
+            <ul>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#portfolio">過往案例</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- 主要影片區 -->
-    <section class="main_video">
-        <video autoplay muted id="backgroundVideo1" class="active">
-            <source src="./video/Quilt_promo_one.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted id="backgroundVideo2" class="inactive">
-            <source src="./video/Quilt_promo_two.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted id="backgroundVideo3" class="inactive">
-            <source src="./video/Quilt_promo_three.mp4" type="video/mp4">
-        </video>
-
-    </section>
-
-    <!-- 內容介紹區 -->
-    <section class="introduce_section">
-        <div class="introduce_content">
-            <p>人為什麼要睡覺？<br>你有沒有想過？<br>身心的保養，也許是為了美麗吧。</p>
-            <p>這意味著，也許這就是對自己的愛。當我們睡覺時，我們愛自己。<br>考慮到這一點，我想睡得更好。</p>
-            <p>對於日常睡眠來說，傳遞柔軟溫暖的愛，西川DOWN誕生了。</p>
+    <!-- Hero Section區域 -->
+    <section id="hero" class="hero-section">
+        <!-- 動畫 -->
+        <div class="animation-container">
+            <div class="slide" id="challenge1">
+                <img src="./img/Challenges_one.png" alt="了解痛點">
+                <p>了解痛點</p>
+            </div>
+            <div class="slide" id="challenge2">
+                <img src="./img/Challenges_two.png" alt="規劃方案">
+            </div>
+            <div class="slide" id="megaphone">
+                <img src="./img/Megaphone.png" alt="提案方法">
+            </div>
+            <div class="slide" id="discussion1">
+                <img src="./img/Discussion_one.png" alt="討論執行">
+            </div>
+            <div class="slide" id="discussion2">
+                <img src="./img/Discussion_two.png" alt="協作">
+            </div>
+            <div class="slide" id="brainstorming1">
+                <img src="./img/Brainstorming_one.png" alt="創意發想">
+            </div>
+            <div class="slide" id="brainstorming2">
+                <img src="./img/Brainstorming_two.png" alt="深化創意">
+            </div>
+            <div class="slide" id="teamwork">
+                <img src="./img/Teamwork.png" alt="共贏合作">
+            </div>
+            <div class="slide" id="recording">
+                <img src="./img/Recording.png" alt="記錄成果">
+            </div>
         </div>
-        <div class="image_content">
-            <img src="./images/sleeping_person.jpg" alt="睡覺的人">
-        </div>
-    </section>
 
-    <!-- 文字說明區 -->
-    <section class="promise_section">
-        <div class="promise_content">
-            <h2>nishikawa DOWN 公開</h2>
-            <p>我們位於西川下，我們擁有材料，我們監控製造過程，我們只有一份強制性同意。驗收是西川DOWN。</p>
-        </div>
-    </section>
-
-    <!-- 效果影片區 -->
-    <section class="scroll_video_section">
-        <div class="video_container">
-            <video id="scrollVideo1" class="scroll_video active" muted loop>
-                <source src="./video/Quilt_promo_one.mp4" type="video/mp4">
-            </video>
-            <video id="scrollVideo2" class="scroll_video inactive" muted loop>
-                <source src="./video/Quilt_promo_four.mp4" type="video/mp4">
-            </video>
-        </div>
-    </section>    
-
-    <!-- 宣傳圖片效果區 -->
-    <section class="comparisonSection">
-        <div class="comparisonImage beforeImage">
-            <img src="./images/sleep_effect_one.png" alt="before">
-        </div>
-        <div class="comparisonImage afterImage">
-            <img src="./images/sleep_effect_two.png" alt="after">
+        <div class="hero-content">
+            <h1>讓您的品牌引起共鳴，與顧客心靈相連！</h1>
+            <p>透過精準的數據分析與富有創意的故事，幫助您打動人心，提升品牌競爭力，打造持久的品牌印象。</p>
         </div>
     </section>
 
-    <!-- 品質說明區 -->
-    <section class="block_intro">
-        <div class="bg_img"></div>
-        <div class="block_inner">
-            <h2 class="logo" data-animate="blur">
-                <svg></svg>
-            </h2>
-            <div class="text typesquare_option">
-                <p>最高品質“おひさまの羽毛”</p>
-            </div>
-            <div class="notes">
-                <p>西川 DOWN 是<br>柔軟、輕盈、溫暖。<br>精心清洗、精心挑選、經過嚴格檢驗的品質，透過可追溯性和清潔的製造流程，讓您安心並獲得信任。</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- 承諾區 -->
-    <section class="commitment_section">
-        <h2>nishikawa DOWN. 承諾</h2>
-        <div class="commitment_box">
-            <div class="commitment_item">
-                <img src="./images/ultrafine_bubbles.png" alt="超細氣泡，超軟水">
-                <p>超細氣泡，超軟水</p>
-            </div>
-            <div class="commitment_item">
-                <img src="./images/fresh_processing.png" alt="新鮮處理®">
-                <p>新鮮處理®</p>
-            </div>
-            <div class="commitment_item">
-                <img src="./images/quality_standards.png" alt="西川獨特的品質標準">
-                <p>獨特的品質標準</p>
-            </div>
-            <div class="commitment_item">
-                <img src="./images/traceability.png" alt="可追溯性">
-                <p>可追溯性</p>
-            </div>
-            <div class="commitment_item">
-                <img src="./images/global_environment.png" alt="對地球環境的考慮">
-                <p>對地球環境的考慮</p>
-            </div>
-        </div>
-        <div class="commitment_image">
-            <img src="./images/promise_awards.jpg" alt="">
-        </div>
-    </section>
-
-    <!-- 推薦品牌和推薦項目區域 -->
-    <section class="recommendation_section">
-        <div class="recommendation_content">
-            <h2>推薦品牌</h2>
-            <div class="recommendation_box">
-                <div class="recommendation_item">
-                    <img src="./images/shop_one.jpg" alt="品牌推薦1">
+    <!-- About Section區域 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">關於兔嘲媒</h2>
+            <div class="about-content">
+                <!-- 左側介紹區域 -->
+                <div class="about-intro">
+                    <h3>兔嘲媒體整合行銷</h3>
+                    <p>商業設計｜影音攝錄｜AI程式</p>
+                    <p>想讓您的品牌在競爭激烈的市場中脫穎而出嗎？我們是您的最佳選擇！我們結合數據分析、創意影音製作與精準的策略規劃，為您的品牌量身打造最有效的行銷方案。過去，我們成功協助多家客戶提升品牌知名度，增加產品銷售量。現在，就讓我們用數據說話，為您的品牌創造非凡的價值！
+                    </p>
                 </div>
-            </div>
-        </div>
-        <div class="recommendation_content">
-            <h2>推薦項目</h2>
-            <div class="recommendation_box">
-                <div class="recommendation_item">
-                    <img src="./images/shop_two.jpg" alt="項目推薦1">
-                </div>
-            </div>
-        </div>
-        <div class="recommendation_content">
-            <h2>店鋪列表</h2>
-            <div class="recommendation_box">
-                <div class="recommendation_item">
-                    <img src="./images/shop_three.jpg" alt="項目推薦1">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 常見問題區 -->
-    <section id="FQA" data-aos="fade" data-aos-duration="3000">
-        <div class="QA_text_box">
-            <div class="QA_title">常見問題</div>
-            <div class="QA_list">
-                <div class="QA_item">
-                    <div class="QA_question">選擇羽絨被時需要考慮哪些要點？</div>
-                    <div class="QA_answer">
-                        <p>分為「羽毛」、「布圍川」、「䌷縫」三點。</p>
-                        <ol>
-                            <li>一般來說，羽毛餞的品質按照鴨→鵝→母鵝的順序提高。</li>
-                            <li>被褥川</li>
-                            <li>Gawa 布料編織緊密，可防止羽毛被吸出，同時布料越柔軟，越有重量，越合身。</li>
-                            <li>䌷縫（䌷初）</li>
-                            <li>我們建議䌷縫，這樣即使長時間使用後，羽毛也不會從一個方格移動到另一個方格。</li>
-                        </ol>
+                <!-- 右側圖示區域 -->
+                <div class="about-icons">
+                    <div class="icon-box">
+                        <div class="icon"><img src="./img/check.png" alt="Check Icon"></div>
+                        <h4>數據變現</h4>
+                        <p>不再做無效廣告投放。找到關鍵精準客群，打造目標客戶喜好的內容，針對企業期望目標制定明確的執行方案，讓數據成功變現。</p>
                     </div>
-                </div>
-                <div class="QA_item">
-                    <div class="QA_question">羽毛是否因產地不同而有所不同？</div>
-                    <div class="QA_answer">
-                        <p>是的，羽毛會因產地和品種的不同而有所差異。一般來說，寒冷地區的鵝羽毛品質較高。</p>
-                    </div>
-                </div>
-                <div class="QA_item">
-                    <div class="QA_question">與其他蒲團相比，它有什麼特點？</div>
-                    <div class="QA_answer">
-                        <p>羽絨被具有輕便、保暖、透氣等特點，特別適合寒冷季節使用。</p>
+                    <div class="icon-box">
+                        <div class="icon"><img src="./img/check.png" alt="Check Icon"></div>
+                        <h4>商模價值</h4>
+                        <p>商業模式為企業根本。協助企業分析自身優勢，制定清晰的商業模式，找到市場中生存之道。</p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- About Us Section (區域) -->
+        <!-- About Us Section (Our Team) -->
+        <section id="about-us" class="about-us-section">
+            <div class="container">
+                <h2 class="section-title">我們的團隊</h2>
+                <div class="team-members">
+                    <!-- Team Member 1 -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="./img/meida.jpg" alt="K.S.">
+                        </div>
+                        <h3>郭美汶</h3>
+                        <p>作為一位富有遠見的執行長，不僅在企業管理上擁有豐富經驗，更精通攝影與社群行銷。</p>
+                        <span class="member-role">執行長</span>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="./img/tang.jpg" alt="Y.E.">
+                        </div>
+                        <h3>唐念平</h3>
+                        <p>身為營運長，擁有深厚的品牌設計專業，並精通企劃書的執行與製作。</p>
+                        <span class="member-role">營運長</span>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="./img/jun.jpg" alt="A.Y.">
+                        </div>
+                        <h3>廖彥鈞</h3>
+                        <p>作為資訊長，在AI應用及網站和遊戲的程式優化領域擁有豐富經驗。</p>
+                        <span class="member-role">資訊長</span>
+                    </div>
+                </div>
+
+                <!-- Show More Button -->
+                <div class="show-more">
+                    <a href="team.html" target="_blank" class="btn btn-secondary">查看更多成員</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Services區域 -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">我們的服務</h2>
+                <div class="service-items">
+                    <!-- 商業設計 -->
+                    <div class="service-item">
+                        <div class="icon-container">
+                            <img src="./img/design.png" alt="商業設計圖標">
+                        </div>
+                        <h3>商業設計</h3>
+                        <p>核心定位、CIS打造，讓企業主清楚了解企業樣貌，有感視覺大升級。</p>
+                    </div>
+                    <!-- 影音攝錄 -->
+                    <div class="service-item">
+                        <div class="icon-container">
+                            <img src="./img/photography.png" alt="影音攝錄圖標">
+                        </div>
+                        <h3>影音攝錄</h3>
+                        <p>企業形象、個人IP、短影音的時代，說清楚講明白，客人自然來，關鍵訊息傳遞，精準有效觸及。</p>
+                    </div>
+                    <!-- AI程式 -->
+                    <div class="service-item">
+                        <div class="icon-container">
+                            <img src="./img/AI.png" alt="AI程式圖標">
+                        </div>
+                        <h3>AI程式</h3>
+                        <p>AI時代，數據轉換為財富，多樣本分析，讓你了解客人思維，讓你看清市場脈絡。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section區域 -->
+        <section id="process" class="process-section">
+            <div class="container">
+                <h2 class="section-title">服務流程</h2>
+                <div class="process-circle">
+                    <!-- 步驟 1 -->
+                    <div class="step step-1">
+                        <div class="circle red">01</div>
+                        <div class="step-content">
+                            <h3>聆聽紀錄</h3>
+                            <p>一場輕鬆的會談，了解行業目前面臨的問題點。</p>
+                        </div>
+                    </div>
+                    <!-- 步驟 2 -->
+                    <div class="step step-2">
+                        <div class="circle red">02</div>
+                        <div class="step-content">
+                            <h3>梳理問題</h3>
+                            <p>分析與整理，產生條列式會談紀錄，再次確認問題點。</p>
+                        </div>
+                    </div>
+                    <!-- 步驟 3 -->
+                    <div class="step step-3">
+                        <div class="circle red">03</div>
+                        <div class="step-content">
+                            <h3>策略先行</h3>
+                            <p>提供明確的解決方式，大數據分析方案結果，做最有效的執行改善作業提案。</p>
+                        </div>
+                    </div>
+                    <!-- 步驟 4 -->
+                    <div class="step step-4">
+                        <div class="circle red">04</div>
+                        <div class="step-content">
+                            <h3>顧問陪跑</h3>
+                            <p>依照策略方式，輔助業主訓練相關部門或人員，達成策略目的。</p>
+                        </div>
+                    </div>
+                    <!-- 步驟 5 -->
+                    <div class="step step-5">
+                        <div class="circle red">05</div>
+                        <div class="step-content">
+                            <h3>代理操作</h3>
+                            <p>業主也可以選擇由公司代操策略內容，將其訓練過程省略，更快速地讓策略結果呈現。</p>
+                        </div>
+                    </div>
+                    <!-- 步驟 6 -->
+                    <div class="step step-6">
+                        <div class="circle red">06</div>
+                        <div class="step-content">
+                            <h3>永續合作</h3>
+                            <p>兔嘲媒作為專業的策略行銷公司，不斷的與時俱進，使用有效的創意策略，輔助業主前行。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 
+        <!-- Portfolio區域 -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">過往案例</h2>
+                <div class="portfolio-carousel">
+                    <div class="portfolio-item" data-aos="fade-right">
+                        <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_1.png" alt="案例1"></a>
+                    </div>
+                    <!-- 更多案例 -->
+                    <div class="portfolio-item" data-aos="fade-right">
+                        <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_13.png" alt="案例2"></a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-right">
+                        <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_8.png" alt="案例3"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- 影像循環區 -->
-    <section class="move_section">
-        <div class="move_container">
-            <div class="move_item">
-                <img src="./images/decoration_img.jpg" alt="move Image 1">
+        <!-- 聯絡我們 -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">聯絡我們</h2>
+                <form class="contact-form" action="javascript:Goform()" method="post">
+                    <input type="text" name="name" placeholder="姓名" required>
+                    <input type="number" name="phone" placeholder="電話" required>
+                    <input type="email" name="email" placeholder="電子郵件">
+                    <textarea name="message" placeholder="想說的話" required></textarea>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
             </div>
-            <div class="move_item">
-                <img src="./images/decoration_img.jpg" alt="Move Image 2">
-            </div>
-            <div class="move_item">
-                <img src="./images/decoration_img.jpg" alt="Move Image 3">
-            </div>
-            <div class="move_item">
-                <img src="./images/decoration_img.jpg" alt="Move Image 4">
-            </div>
-            <div class="move_item">
-                <img src="./images/decoration_img.jpg" alt="Move Image 5">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 頁尾區 -->
-    <footer class="site_footer">
-        <div class="footer_content">
-            <p>&copy; 2024 Darkness. 保留所有權利。</p>
-            <div class="social_media">
-                <a href="https://www.youtube.com/results?search_query=eat+what" target="blank"><img
-                        src="./images/youtube.png" alt="youtube"></a>
-                <a href="https://www.instagram.com/besscomha" target="blank"><img src="./images/instagram.png"
-                        alt="instagram"></a>
-                <a href="http://m.facebook.com/yanjun.liao.50?ref=bookmarks" target="blank"><img
-                        src="./images/facebook.png" alt="facebook"></a>
+        <!-- 頁尾 -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 兔嘲媒體整合行銷. All Rights Reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#services">服務</a></li>
+                    <li><a href="#portfolio">案例</a></li>
+                    <li><a href="#contact">聯絡我們</a></li>
+                </ul>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <script src="./main.js"></script>
+        <!-- 置頂按鈕 -->
+        <!-- <a id="arrow" data-st-target="top" data-st-duration="8000" data-st-top="300" data-st-time="1000"></a> -->
+
+
+        <!-- AOS CDN -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- slick CDN -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!-- bootstrap CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+
+        <script src="./main.js"></script>
 </body>
+
+<script>
+    function Goform() {
+        var field1 = $("[name = 'name']").val();
+        var field2 = $("[name = 'phone']").val();
+        var field3 = $("[name = 'email']").val();
+        var field3 = $("[name = 'message']").val();
+
+
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLScWJIQ9ruV9M1jgXv1Farj9352ZofVPaIEAi6z6FMBdUlNLDw/viewform",
+            data: {
+                "entry.1797270477": field1,
+                "entry.1568458640": field2,
+                "entry.1758749140": field3,
+                "entry.186079807": field4,
+            },
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+                0: function () {
+                    alart("完成");
+                },
+                200: function () {
+                    alart("完成");
+                }
+            }
+        });
+    }   
+</script>
+
+
+<!-- Goform可改名但要對的到html代碼
+
+例：<form action="javascript:Goform();"> 須符合 function Goform() 才會抓取到資料 -->
 
 </html>
