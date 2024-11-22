@@ -110,3 +110,18 @@ setInterval(() => {
     currentColor = (currentColor + 1) % colors.length;
     heroSection.style.background = colors[currentColor];
 }, 5000);
+
+// 漢堡選單
+document.querySelector('.hamburger-menu').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// 背景切換
+const heroSection = document.querySelector('.hero-section');
+let colors = ['#4caf50', '#81c784', '#ff9800'];
+let currentColor = 0;
+
+setInterval(() => {
+    currentColor = (currentColor + 1) % colors.length;
+    heroSection.style.background = colors[currentColor];
+}, 5000);

@@ -35,57 +35,38 @@
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <a href="#hero"><img src="./img/LOGO06.png" alt=""></a>
+                <a href="#hero"><img src="./img/LOGO06.png" alt="LOGO"></a>
             </div>
-            <hr>
-            <ul>
-                <li><a href="#about">關於我們</a></li>
-                <li><a href="#portfolio">過往案例</a></li>
-                <li><a href="#contact">聯絡我們</a></li>
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#value">VALUE</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#works">WORKS</a></li>
+                <li><a href="#member">MEMBER</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section區域 -->
     <section id="hero" class="hero-section">
-        <!-- 動畫 -->
-        <div class="animation-container">
-            <div class="slide" id="challenge1">
-                <img src="./img/Challenges_one.png" alt="了解痛點">
-                <p>了解痛點</p>
-            </div>
-            <div class="slide" id="challenge2">
-                <img src="./img/Challenges_two.png" alt="規劃方案">
-            </div>
-            <div class="slide" id="megaphone">
-                <img src="./img/Megaphone.png" alt="提案方法">
-            </div>
-            <div class="slide" id="discussion1">
-                <img src="./img/Discussion_one.png" alt="討論執行">
-            </div>
-            <div class="slide" id="discussion2">
-                <img src="./img/Discussion_two.png" alt="協作">
-            </div>
-            <div class="slide" id="brainstorming1">
-                <img src="./img/Brainstorming_one.png" alt="創意發想">
-            </div>
-            <div class="slide" id="brainstorming2">
-                <img src="./img/Brainstorming_two.png" alt="深化創意">
-            </div>
-            <div class="slide" id="teamwork">
-                <img src="./img/Teamwork.png" alt="共贏合作">
-            </div>
-            <div class="slide" id="recording">
-                <img src="./img/Recording.png" alt="記錄成果">
-            </div>
-        </div>
-
         <div class="hero-content">
-            <h1>讓您的品牌引起共鳴，與顧客心靈相連！</h1>
-            <p>透過精準的數據分析與富有創意的故事，幫助您打動人心，提升品牌競爭力，打造持久的品牌印象。</p>
+            <h1>
+                <span class="line">GOOD QUALITY</span>
+                <span class="line">NICE PRICE</span>
+                <span class="line vibes">&VIBES</span>
+            </h1>
+            <p class="hero-subtitle">DELANCY IS YOUR MOVIE PARTNER</p>
+            <a href="#about" class="scroll-down">
+                <img src="./img/scroll_down_icon.png" alt="Scroll Down">
+            </a>
         </div>
     </section>
-
+        
 
     <!-- About Section區域 -->
     <section id="about" class="about-section">
@@ -248,69 +229,69 @@
         </section>
     </section>
 
-        <!-- Portfolio區域 -->
-        <section id="portfolio" class="portfolio-section">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">過往案例</h2>
-                <div class="portfolio-carousel">
-                    <div class="portfolio-item" data-aos="fade-right">
-                        <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_1.png" alt="案例1"></a>
-                    </div>
-                    <!-- 更多案例 -->
-                    <div class="portfolio-item" data-aos="fade-right">
-                        <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_13.png" alt="案例2"></a>
-                    </div>
-                    <div class="portfolio-item" data-aos="fade-right">
-                        <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_8.png" alt="案例3"></a>
-                    </div>
+    <!-- Portfolio區域 -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">過往案例</h2>
+            <div class="portfolio-carousel">
+                <div class="portfolio-item" data-aos="fade-right">
+                    <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_1.png" alt="案例1"></a>
+                </div>
+                <!-- 更多案例 -->
+                <div class="portfolio-item" data-aos="fade-right">
+                    <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_13.png" alt="案例2"></a>
+                </div>
+                <div class="portfolio-item" data-aos="fade-right">
+                    <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_8.png" alt="案例3"></a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 聯絡我們 -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">聯絡我們</h2>
-                <form class="contact-form" action="javascript:Goform()" method="post">
-                    <input type="text" name="name" placeholder="姓名" required>
-                    <input type="number" name="phone" placeholder="電話" required>
-                    <input type="email" name="email" placeholder="電子郵件">
-                    <textarea name="message" placeholder="想說的話" required></textarea>
-                    <button type="submit" class="btn btn-primary">提交</button>
-                </form>
-            </div>
-        </section>
+    <!-- 聯絡我們 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">聯絡我們</h2>
+            <form class="contact-form" action="javascript:Goform()" method="post">
+                <input type="text" name="name" placeholder="姓名" required>
+                <input type="number" name="phone" placeholder="電話" required>
+                <input type="email" name="email" placeholder="電子郵件">
+                <textarea name="message" placeholder="想說的話" required></textarea>
+                <button type="submit" class="btn btn-primary">提交</button>
+            </form>
+        </div>
+    </section>
 
-        <!-- 頁尾 -->
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2024 兔嘲媒體整合行銷. All Rights Reserved.</p>
-                <ul class="footer-links">
-                    <li><a href="#services">服務</a></li>
-                    <li><a href="#portfolio">案例</a></li>
-                    <li><a href="#contact">聯絡我們</a></li>
-                </ul>
-            </div>
-        </footer>
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 兔嘲媒體整合行銷. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#services">服務</a></li>
+                <li><a href="#portfolio">案例</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </div>
+    </footer>
 
-        <!-- 置頂按鈕 -->
-        <!-- <a id="arrow" data-st-target="top" data-st-duration="8000" data-st-top="300" data-st-time="1000"></a> -->
+    <!-- 置頂按鈕 -->
+    <!-- <a id="arrow" data-st-target="top" data-st-duration="8000" data-st-top="300" data-st-time="1000"></a> -->
 
 
-        <!-- AOS CDN -->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <!-- slick CDN -->
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <!-- bootstrap CDN -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-            crossorigin="anonymous"></script>
+    <!-- AOS CDN -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- slick CDN -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- bootstrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
 
-        <script src="./main.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 <script>

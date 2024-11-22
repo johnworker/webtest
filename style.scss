@@ -35,113 +35,133 @@ body {
 
 .header {
     position: fixed;
-    align-items: center;
+    top: 0;
     width: 100%;
-
+    background: #fff;
+    z-index: 1000;
     .nav {
-        position: fixed;
-        flex-grow: 1;
-        margin-left: 50px;
-        right: 30px;
-        top: 50px;
-        display: block;
-
-        .logo {
-            width: 100px;
-
-            img {
-                width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        .logo img {
+            height: 50px;
+        }
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            span {
+                width: 25px;
+                height: 3px;
+                background: #333;
+                margin: 4px 0;
             }
         }
-
-        hr {
-            width: 70px;
-            background: $light-red;
-        }
-
-        ul {
+        .nav-links {
             display: flex;
-            gap: 15px;
             list-style: none;
-            display: block;
-            background: $background-color;
-
             li {
-                margin: 5px 0;
-                text-align: center;
-
+                margin: 0 10px;
                 a {
                     text-decoration: none;
-                    color: black;
-                    font-weight: bolder;
-
+                    font-size: 1.2rem;
+                    color: #333;
+                    transition: color 0.3s;
                     &:hover {
-                        color: $dark-red;
+                        color: #007bff;
                     }
                 }
             }
+        }
+    }
+    @media (max-width: 768px) {
+        .hamburger-menu {
+            display: flex;
+        }
+        .nav-links {
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff;
+            display: none;
+            width: 100%;
+            li {
+                margin: 15px 0;
+                text-align: center;
+            }
+        }
+        .nav-links.active {
+            display: block;
         }
     }
 }
 
 // Hero Section區
 .hero-section {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-image: url("../img/hero-bg.jpg"); // 替換成背景圖片的路徑
-    background-size: cover;
-    background-position: center;
-    color: $background-color;
     text-align: center;
-    max-width: 1100px;
-    margin: 0 150px auto;
-
-    // 動畫區域
-    .animation-container {
-        position: relative;
-        width: 1000px;
-        height: 570px;
-        overflow: hidden;
-        margin: 0 50px;
-
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            img {
-                width: 100%;
-                height: auto;
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    color: #fff;
+    .hero-content {
+        h1 {
+            font-size: 4rem;
+            .line {
+                display: block;
+                font-weight: bold;
+                animation: fadeIn 1s ease-out forwards;
+                &:nth-child(1) {
+                    animation-delay: 0.5s;
+                }
+                &:nth-child(2) {
+                    animation-delay: 1s;
+                }
+                &:nth-child(3) {
+                    animation-delay: 1.5s;
+                }
+            }
+            .vibes {
+                color: #ffd700;
             }
         }
-
-        .active {
-            opacity: 1;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-out forwards;
+        }
+        .scroll-down {
+            margin-top: 30px;
+            display: inline-block;
+            animation: bounce 1.5s infinite;
+            img {
+                width: 40px;
+            }
         }
     }
+}
 
-    .hero-content {
-        max-width: 600px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #000;
-        }
-
-        p {
-            font-size: 1rem;
-            margin: 30px 0;
-            color: #000;
-        }
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 }
 
@@ -508,7 +528,7 @@ body {
 }
 
 // Portfolio Section區
-.portfolio-section{
+.portfolio-section {
     padding: $padding-section 0;
     background-color: $secondary-color;
     max-width: 900px;
@@ -602,10 +622,8 @@ body {
         a {
             text-decoration: none;
             color: #000;
-
         }
 
-        
         img {
             width: 300px;
             height: 300px;
@@ -621,14 +639,12 @@ body {
             &:hover {
                 color: $dark-red;
             }
-
         }
 
         .ant {
             object-position: -140px;
         }
     }
-    
 }
 
 // 麵包屑
@@ -652,7 +668,8 @@ body {
         color: #888; // Gray color for the last item
     }
 
-    > a + a::before, > a + span::before {
+    > a + a::before,
+    > a + span::before {
         content: ">";
         margin: 0 5px;
         color: #ccc; // Color for separator
@@ -663,17 +680,17 @@ body {
 .portfolio-show {
     padding: 50px;
     text-align: center;
-    
+
     .portfolio-item {
         max-width: 1200px;
         margin: 0 auto;
         color: #fff;
         font-family: "Arial", sans-serif;
-        
+
         .portfolio-image {
             position: relative;
             margin-bottom: 20px;
-            
+
             img {
                 max-width: 100%;
                 height: auto;
@@ -681,10 +698,10 @@ body {
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             }
         }
-        
+
         .portfolio-description {
             padding: 20px;
-            
+
             h2 {
                 font-size: 24px;
                 margin-bottom: 10px;
@@ -692,7 +709,7 @@ body {
                 text-align: left;
                 font-weight: bold;
             }
-            
+
             p {
                 font-size: 16px;
                 line-height: 1.6;
@@ -703,7 +720,6 @@ body {
         }
     }
 }
-
 
 // 頁尾區
 footer {
@@ -751,5 +767,3 @@ footer {
     bottom: 30px;
     cursor: pointer;
 }
-
-
