@@ -139,144 +139,148 @@ body {
   }
 }
 .about-section {
-  padding: 60px 0;
-  background-color: #f5f5f5;
+  background-color: #f8f4f0;
+  padding: 50px 20px;
+  position: relative;
+}
+.about-section .about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
 }
-.about-section .section-title {
-  text-align: center;
-  font-size: 1.8rem;
-  color: #e96669;
-  margin-bottom: 30px;
+.about-section .about-text {
+  margin-bottom: 20px;
 }
-.about-section .about-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+.about-section .about-text .about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c6e49;
+  line-height: 1.4;
 }
-.about-section .about-content .about-intro {
-  flex: 1;
-  max-width: 50%;
-  padding-right: 20px;
-}
-.about-section .about-content .about-intro h3 {
+.about-section .about-text .about-title .sub-title {
   font-size: 1.5rem;
-  color: #e96669;
-  margin-bottom: 10px;
+  color: #000;
+  font-weight: normal;
+  margin-top: 10px;
+  display: block;
 }
-.about-section .about-content .about-intro p {
+.about-section .about-text .about-description {
   font-size: 1rem;
   line-height: 1.8;
   color: #333;
 }
-.about-section .about-content .about-intro p:first-of-type {
-  color: #f5f5f5;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+.about-section .about-text .about-description .highlight {
+  color: #2c6e49;
+  font-weight: bold;
 }
-.about-section .about-content .about-icons {
-  flex: 1;
-  max-width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+.about-section .about-illustration {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
-.about-section .about-content .about-icons .icon-box {
-  text-align: center;
-  max-width: 180px;
-  height: 300px;
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.about-section .about-content .about-icons .icon-box .icon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 10px;
-}
-.about-section .about-content .about-icons .icon-box .icon img {
-  width: 100%;
+.about-section .about-illustration img {
+  width: 150px;
   height: auto;
 }
-.about-section .about-content .about-icons .icon-box h4 {
-  font-size: 1.2rem;
-  color: #e96669;
-  margin-bottom: 10px;
+@media (max-width: 768px) {
+  .about-section .about-container {
+    flex-direction: column;
+  }
+  .about-section .about-illustration {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .about-section .about-illustration img {
+    width: 120px;
+  }
 }
-.about-section .about-content .about-icons .icon-box p {
-  font-size: 0.9rem;
-  color: #333;
-  line-height: 1.6;
+.about-section .about-section.animate .about-text {
+  animation: fadeIn 1s ease-in-out;
+}
+.about-section .about-section.animate .about-illustration img {
+  animation: slideInRight 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .about-us-section {
-  padding: 60px 0;
-  background-color: #f9f9f9;
-  margin: 0 auto;
+  position: relative;
+  background-color: #f8f4f0;
+  height: 100vh;
+  overflow: hidden;
 }
-.about-us-section .section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2em;
-  color: #333;
+.about-us-section .sliced-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
-.about-us-section .team-members {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.about-us-section .sliced-container .sliced-layer {
+  position: absolute;
+  width: 100%;
+  height: 33.33%;
+  overflow: hidden;
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
-.about-us-section .team-members .team-member {
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 20px;
-  max-width: 250px;
+.about-us-section .sliced-container .sliced-layer.parallax .layer-1 {
+  transform: translateY(-10%);
 }
-.about-us-section .team-members .team-member .member-image img {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+.about-us-section .sliced-container .sliced-layer.parallax .layer-2 {
+  transform: translateY(0%);
+}
+.about-us-section .sliced-container .sliced-layer.parallax .layer-3 {
+  transform: translateY(10%);
+}
+.about-us-section .sliced-container .sliced-layer img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-bottom: 10px;
+  transform: scale(1.1); /* 輕微放大 */
 }
-.about-us-section .team-members .team-member h3 {
-  font-size: 1.2em;
-  color: #333;
-  margin-bottom: 10px;
+.about-us-section .sliced-container .layer-1 {
+  top: 0;
 }
-.about-us-section .team-members .team-member p {
-  font-size: 0.9em;
-  color: #666;
-  margin-bottom: 10px;
+.about-us-section .sliced-container .layer-2 {
+  top: 33.33%;
 }
-.about-us-section .team-members .team-member .member-role {
-  display: block;
-  font-size: 0.85em;
-  color: #999;
+.about-us-section .sliced-container .layer-3 {
+  top: 66.66%;
 }
-.about-us-section .show-more {
-  text-align: center;
-  margin-top: 20px;
+.about-us-section .sliced-container.animate .layer-1 {
+  transform: translateY(0%);
+  opacity: 1;
 }
-.about-us-section .show-more .btn-secondary {
-  background-color: #e96669;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1em;
-  transition: background-color 0.3s;
-  border: none;
+.about-us-section .sliced-container.animate .layer-2 {
+  transform: translateY(0%);
+  opacity: 1;
 }
-.about-us-section .show-more .btn-secondary:hover {
-  background-color: #d02b2f;
+.about-us-section .sliced-container.animate .layer-3 {
+  transform: translateY(0%);
+  opacity: 1;
 }
 
 .services-section {

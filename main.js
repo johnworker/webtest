@@ -94,23 +94,6 @@ $(document).ready(function() {
     });
 });
 
-
-// 漢堡選單
-document.querySelector('.hamburger-menu').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-});
-
-
-// 設置
-const heroSection = document.querySelector('.hero-section');
-let colors = ['#4caf50', '#81c784', '#ff9800'];
-let currentColor = 0;
-
-setInterval(() => {
-    currentColor = (currentColor + 1) % colors.length;
-    heroSection.style.background = colors[currentColor];
-}, 5000);
-
 // 漢堡選單
 document.querySelector('.hamburger-menu').addEventListener('click', () => {
     document.querySelector('.nav-links').classList.toggle('active');
@@ -125,3 +108,52 @@ setInterval(() => {
     currentColor = (currentColor + 1) % colors.length;
     heroSection.style.background = colors[currentColor];
 }, 5000);
+
+
+// about section動畫
+document.addEventListener("DOMContentLoaded", () => {
+    const aboutSection = document.querySelector('.about-section');
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                aboutSection.classList.add('animate');
+            }
+        },
+        { threshold: 0.1 }
+    );
+    observer.observe(aboutSection);
+});
+
+
+// 添加滾動監聽器以啟動動畫
+document.addEventListener("DOMContentLoaded", () => {
+    const slicedContainer = document.querySelector('.sliced-container');
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                slicedContainer.classList.add('animate');
+            } else {
+                slicedContainer.classList.remove('animate');
+            }
+        },
+        { threshold: 0.3 } // 當切片區域 30% 進入視窗時觸發
+    );
+
+    observer.observe(slicedContainer);
+});
+
+
+// 滾動動畫事件
+window.addEventListener('scroll', () => {
+    const slicedContainer = document.querySelector('.sliced-container');
+    const scrollPosition = window.scrollY;
+    const screenHeight = window.innerHeight;
+
+    if (scrollPosition > slicedContainer.offsetTop - screenHeight && scrollPosition < slicedContainer.offsetTop + screenHeight) {
+        const offset = (scrollPosition - slicedContainer.offsetTop) / screenHeight;
+        document.querySelector('.layer-1').style.transform = `translateY(${offset * -20}%)`;
+        document.querySelector('.layer-2').style.transform = `translateY(${offset * 0}%)`;
+        document.querySelector('.layer-3').style.transform = `translateY(${offset * 20}%)`;
+    }
+});

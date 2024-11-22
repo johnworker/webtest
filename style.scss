@@ -167,163 +167,175 @@ body {
 
 // About Section
 .about-section {
-    padding: $padding-section 0;
-    background-color: $secondary-color; // 使用較淺的背景色讓內容突出
-    max-width: 900px;
-    margin: 0 auto;
+    background-color: #f8f4f0;
+    padding: 50px 20px;
+    position: relative;
 
-    .section-title {
-        text-align: center;
-        font-size: 1.8rem;
-        color: $light-red;
-        margin-bottom: 30px;
-    }
-
-    .about-content {
+    .about-container {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: flex-start;
-        flex-wrap: wrap;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+    }
 
-        .about-intro {
-            flex: 1;
-            max-width: 50%;
-            padding-right: 20px;
+    .about-text {
+        margin-bottom: 20px;
 
-            h3 {
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c6e49;
+            line-height: 1.4;
+
+            .sub-title {
                 font-size: 1.5rem;
-                color: $light-red;
-                margin-bottom: 10px;
-            }
-
-            p {
-                font-size: 1rem;
-                line-height: 1.8;
-                color: $text-color;
-
-                &:first-of-type {
-                    color: $secondary-color;
-                    font-size: 1.1rem;
-                    margin-bottom: 20px;
-                }
+                color: #000;
+                font-weight: normal;
+                margin-top: 10px;
+                display: block;
             }
         }
 
-        .about-icons {
-            flex: 1;
-            max-width: 50%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
+        .about-description {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
 
-            .icon-box {
-                text-align: center;
-                max-width: 180px;
-                height: 300px;
-                background-color: lighten($light-red, 45%);
-                border-radius: 8px;
-                padding: 20px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-                .icon {
-                    width: 50px;
-                    height: 50px;
-                    margin: 0 auto 10px;
-
-                    img {
-                        width: 100%;
-                        height: auto;
-                    }
-                }
-
-                h4 {
-                    font-size: 1.2rem;
-                    color: $light-red;
-                    margin-bottom: 10px;
-                }
-
-                p {
-                    font-size: 0.9rem;
-                    color: $text-color;
-                    line-height: 1.6;
-                }
+            .highlight {
+                color: #2c6e49;
+                font-weight: bold;
             }
         }
     }
+
+    .about-illustration {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+
+        img {
+            width: 150px;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-container {
+            flex-direction: column;
+        }
+        .about-illustration {
+            position: relative;
+            bottom: auto;
+            right: auto;
+            margin-top: 20px;
+            text-align: center;
+
+            img {
+                width: 120px;
+            }
+        }
+    }
+
+    .about-section.animate {
+        .about-text {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .about-illustration img {
+            animation: slideInRight 1s ease-in-out;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
 }
 
 // About Us
 .about-us-section {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-    margin: 0 auto;
+    position: relative;
+    background-color: #f8f4f0;
+    height: 100vh;
+    overflow: hidden;
 
-    .section-title {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 2em;
-        color: #333;
-    }
+    .sliced-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
 
-    .team-members {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+        .sliced-layer {
+            position: absolute;
+            width: 100%;
+            height: 33.33%;
+            overflow: hidden;
+            transition: transform 1s ease-out, opacity 1s ease-out;
 
-        .team-member {
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 20px;
-            max-width: 250px;
+            &.parallax {
+                .layer-1 {
+                    transform: translateY(-10%);
+                }
+                .layer-2 {
+                    transform: translateY(0%);
+                }
+                .layer-3 {
+                    transform: translateY(10%);
+                }
+            }
 
-            .member-image img {
-                border-radius: 50%;
-                width: 100px;
-                height: 100px;
+            img {
+                width: 100%;
+                height: 100%;
                 object-fit: cover;
-                margin-bottom: 10px;
-            }
-
-            h3 {
-                font-size: 1.2em;
-                color: #333;
-                margin-bottom: 10px;
-            }
-
-            p {
-                font-size: 0.9em;
-                color: #666;
-                margin-bottom: 10px;
-            }
-
-            .member-role {
-                display: block;
-                font-size: 0.85em;
-                color: #999;
+                transform: scale(1.1); /* 輕微放大 */
             }
         }
-    }
 
-    .show-more {
-        text-align: center;
-        margin-top: 20px;
+        .layer-1 {
+            top: 0;
+        }
 
-        .btn-secondary {
-            background-color: $light-red;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1em;
-            transition: background-color 0.3s;
-            border: none;
+        .layer-2 {
+            top: 33.33%;
+        }
 
-            &:hover {
-                background-color: $dark-red;
+        .layer-3 {
+            top: 66.66%;
+        }
+
+        &.animate {
+            .layer-1 {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+
+            .layer-2 {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+
+            .layer-3 {
+                transform: translateY(0%);
+                opacity: 1;
             }
         }
     }
