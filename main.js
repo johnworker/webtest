@@ -8,11 +8,11 @@ $(function () {
     });
     //指定捲軸位置淡出淡入
     // $(window).scroll(function () {
-        // if ($(this).scrollTop() > 200) {
-            // $('#gotop').stop().fadeTo('fast', 1);
-        // } else {
-            // $('#gotop').stop().fadeOut('fast');
-        // }
+    // if ($(this).scrollTop() > 200) {
+    // $('#gotop').stop().fadeTo('fast', 1);
+    // } else {
+    // $('#gotop').stop().fadeOut('fast');
+    // }
     // });
 });
 
@@ -47,7 +47,7 @@ $(window).scroll(function () {
 // 動畫區域
 const slides = document.querySelectorAll('.slide');
 let currentIndex = 0;
-const slideInterval = 3000; 
+const slideInterval = 3000;
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -67,13 +67,13 @@ showSlide(currentIndex); // 顯示第一張
 setInterval(nextSlide, slideInterval); // 每4秒換一張
 
 // 平滑滾動至對應區域
-$(document).ready(function() {
-    $('a[href^="#"]').click(function(event) {
+$(document).ready(function () {
+    $('a[href^="#"]').click(function (event) {
         event.preventDefault();
-        
+
         var target = $($(this).attr('href'));
-        
-        if(target.length) {
+
+        if (target.length) {
             $('html, body').animate({
                 scrollTop: target.offset().top
             }, 1000); // 1000 表示動畫持續時間，可依需求調整
@@ -82,7 +82,7 @@ $(document).ready(function() {
 });
 
 // 輪播器
-$(document).ready(function() {
+$(document).ready(function () {
     $('.portfolio-carousel').slick({
         infinite: true,        // 無限捲動
         slidesToShow: 1,       // 一次顯示的數量
@@ -127,33 +127,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 添加滾動監聽器以啟動動畫
 document.addEventListener("DOMContentLoaded", () => {
-    const slicedContainer = document.querySelector('.sliced-container');
-
+    const aboutSection = document.querySelector('.about-us-section');
     const observer = new IntersectionObserver(
         ([entry]) => {
             if (entry.isIntersecting) {
-                slicedContainer.classList.add('animate');
-            } else {
-                slicedContainer.classList.remove('animate');
+                aboutSection.classList.add('animate');
             }
         },
-        { threshold: 0.3 } // 當切片區域 30% 進入視窗時觸發
+        { threshold: 0.3 } // 當區域 30% 進入視窗時觸發
     );
-
-    observer.observe(slicedContainer);
+    observer.observe(aboutSection);
 });
 
 
 // 滾動動畫事件
 window.addEventListener('scroll', () => {
-    const slicedContainer = document.querySelector('.sliced-container');
+    const aboutSection = document.querySelector('.about-us-section');
+    const background = document.querySelector('.about-background');
     const scrollPosition = window.scrollY;
-    const screenHeight = window.innerHeight;
+    const sectionTop = aboutSection.offsetTop;
+    const sectionHeight = aboutSection.offsetHeight;
+    const windowHeight = window.innerHeight;
 
-    if (scrollPosition > slicedContainer.offsetTop - screenHeight && scrollPosition < slicedContainer.offsetTop + screenHeight) {
-        const offset = (scrollPosition - slicedContainer.offsetTop) / screenHeight;
-        document.querySelector('.layer-1').style.transform = `translateY(${offset * -20}%)`;
-        document.querySelector('.layer-2').style.transform = `translateY(${offset * 0}%)`;
-        document.querySelector('.layer-3').style.transform = `translateY(${offset * 20}%)`;
+    if (scrollPosition + windowHeight > sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        const offset = (scrollPosition + windowHeight - sectionTop) / (sectionHeight + windowHeight);
+        background.style.transform = `scale(1.1) translateY(${offset * 20 - 10}%)`;
     }
 });
