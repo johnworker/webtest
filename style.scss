@@ -274,55 +274,56 @@ body {
 // About Us
 .about-us-section {
     position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    height: 150vh; /* 確保滾動效果有足夠空間 */
     background-color: #f8f4f0;
-}
+    overflow: hidden;
 
-.about-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #333;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-}
+    .mask-container {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
 
-.about-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
+        .mask-layer {
+            width: 60%; /* 初始圖片遮罩大小 */
+            overflow: hidden;
+            mask-size: contain; /* 使用遮罩效果 */
+            mask-position: center;
+            mask-repeat: no-repeat;
+            transition: mask-size 0.3s ease, transform 0.5s ease;
 
-.about-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: scale(1.1); /* 放大效果 */
+                transition: transform 0.5s ease;
+            }
+        }
 
-.about-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('./img/about-background.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: blur(5px);
-    transform: scale(1.1);
-    transition: transform 1s ease-out, opacity 1s ease-out;
-    z-index: 1;
-    opacity: 0;
-}
+        .mask-1 {
+            mask-image: url('./img/mask1.svg');
+        }
 
-.about-us-section.animate .about-background {
-    transform: scale(1);
-    opacity: 1;
-}
+        .mask-2 {
+            mask-image: url('./img/mask2.svg');
+        }
 
+        .mask-3 {
+            mask-image: url('./img/mask3.svg');
+        }
+
+        &.animate {
+            .mask-layer {
+                mask-size: 100%; /* 放大遮罩至全螢幕 */
+                transform: scale(1); /* 縮放動畫 */
+            }
+        }
+    }
+}
 
 // Services Section
 .services-section {

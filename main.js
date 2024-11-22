@@ -127,30 +127,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 添加滾動監聽器以啟動動畫
 document.addEventListener("DOMContentLoaded", () => {
-    const aboutSection = document.querySelector('.about-us-section');
+    const maskContainer = document.querySelector('.mask-container');
+    const maskLayers = document.querySelectorAll('.mask-layer');
+
+    // Intersection Observer 監控滾動
     const observer = new IntersectionObserver(
         ([entry]) => {
             if (entry.isIntersecting) {
-                aboutSection.classList.add('animate');
+                maskContainer.classList.add('animate');
+            } else {
+                maskContainer.classList.remove('animate');
             }
         },
-        { threshold: 0.3 } // 當區域 30% 進入視窗時觸發
+        { threshold: 0.5 } // 當區域 50% 進入視窗時觸發
     );
-    observer.observe(aboutSection);
-});
 
+    observer.observe(maskContainer);
 
-// 滾動動畫事件
-window.addEventListener('scroll', () => {
-    const aboutSection = document.querySelector('.about-us-section');
-    const background = document.querySelector('.about-background');
-    const scrollPosition = window.scrollY;
-    const sectionTop = aboutSection.offsetTop;
-    const sectionHeight = aboutSection.offsetHeight;
-    const windowHeight = window.innerHeight;
-
-    if (scrollPosition + windowHeight > sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        const offset = (scrollPosition + windowHeight - sectionTop) / (sectionHeight + windowHeight);
-        background.style.transform = `scale(1.1) translateY(${offset * 20 - 10}%)`;
-    }
+    // 視差效果 - 單獨調整每一層
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        maskLayers.forEach((layer, index) => {
+            const offset = scrollTop / (500 * (index + 1)); // 不同層有不同速度
+            layer.style.transform = `translateY(${offset}px)`;
+        });
+    });
 });
