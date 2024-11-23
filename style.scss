@@ -37,6 +37,7 @@ html {
     font-family: Arial, sans-serif;
 }
 
+// 導覽列
 .header {
     background-color: #fdfdf9;
     display: flex;
@@ -54,6 +55,9 @@ html {
 
         .logo img {
             max-width: 150px;
+            height: 100px;
+            left: 30px;
+            top: 30px;
         }
 
         nav {
@@ -71,7 +75,7 @@ html {
                         font-weight: bold;
                         color: #333;
                         transition: color 0.3s;
-    
+
                         &:hover {
                             color: #555;
                         }
@@ -93,6 +97,79 @@ html {
             &:hover {
                 background-color: #555;
             }
+        }
+    }
+}
+
+// 第一展示區
+.hero-slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    top: 10%;
+
+    .slider {
+        position: relative;
+        width: 1000px;
+        height: 600px;
+        margin: 0 auto;
+
+        .slide {
+            display: none;
+            position: absolute;
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .caption {
+                position: absolute;
+                bottom: 10%;
+                right: 5%;
+                color: #333;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 15px 20px;
+                border-radius: 10px;
+
+                h1 {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    margin: 0;
+                }
+            }
+        }
+
+        .fade {
+            animation: fadeEffect 1.5s ease-in-out;
+        }
+    }
+
+    .textfixed {
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+        color: #333;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px 20px;
+        border-radius: 10px;
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+
+    @keyframes fadeEffect {
+        from {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1;
         }
     }
 }

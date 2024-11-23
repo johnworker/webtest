@@ -33,6 +33,9 @@ html {
 }
 .header .header-content .logo img {
   max-width: 150px;
+  height: 100px;
+  left: 30px;
+  top: 30px;
 }
 .header .header-content nav ul {
   display: flex;
@@ -63,4 +66,67 @@ html {
 }
 .header .header-content .reserve-button:hover {
   background-color: #555;
+}
+
+.hero-slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  top: 10%;
+}
+.hero-slider .slider {
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  margin: 0 auto;
+}
+.hero-slider .slider .slide {
+  display: none;
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  margin: 0 auto;
+}
+.hero-slider .slider .slide img {
+  width: 100%;
+  height: 100%;
+}
+.hero-slider .slider .slide .caption {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  color: #333;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+.hero-slider .slider .slide .caption h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+.hero-slider .slider .fade {
+  animation: fadeEffect 1.5s ease-in-out;
+}
+.hero-slider .textfixed {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  color: #333;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+.hero-slider .textfixed h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
