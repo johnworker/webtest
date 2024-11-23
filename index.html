@@ -7,259 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>兔嘲媒體整合行銷</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- slick CDN -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <!-- bootstrap CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-
     <link rel="stylesheet" href="./style.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P8VER0LG8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-8P8VER0LG8');
-    </script>
-
     <meta name="google-site-verification" content="6NNHAyzslowOZx_wXi6K7FRlzaqn-tVHoS--OV4QEEc" />
 </head>
 
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <a href="#hero"><img src="./img/LOGO06.png" alt="LOGO"></a>
-            </div>
-            <button class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#value">VALUE</a></li>
-                <li><a href="#news">NEWS</a></li>
-                <li><a href="#works">WORKS</a></li>
-                <li><a href="#member">MEMBER</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section區域 -->
-    <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <h1>
-                <span class="line">GOOD QUALITY</span>
-                <span class="line">NICE PRICE</span>
-                <span class="line vibes">&VIBES</span>
-            </h1>
-            <p class="hero-subtitle">DELANCY IS YOUR MOVIE PARTNER</p>
-            <a href="#about" class="scroll-down">
-                <img src="./img/scroll_down_icon.png" alt="Scroll Down">
-            </a>
-        </div>
-    </section>
-
-
-    <!-- About Section區域 -->
-    <section id="about" class="about-section">
-        <div class="container about-container">
-            <div class="about-text">
-                <h1 class="about-title">
-                    ジャストサイズ<br>
-                    <span class="sub-title">映像クリエイションパートナー</span>
-                </h1>
-                <p class="about-description">
-                    さまざまなメディアの中で、最も情報量が多い「映像」は、これまでも、そしてこれからも企業と社会をつなぐコミュニケーションの主役であり続けます。<br><br>
-                    品質とプライス両面での満足を提供する映像クリエイションパートナーとして、クライアントの課題に耳を傾け、<span class="highlight">“本当に創りたかった映像”</span>
-                    をうみだします。<br><br>
-                    広告、ドキュメンタリー、インタビューなど年間 <span class="highlight">100本以上</span> の映像制作ニーズに品質はもちろん、フットワーク軽く「ジャストサイズ」で応える。
-                </p>
-            </div>
-            <div class="about-illustration">
-                <img src="./img/illustration.png" alt="Illustration">
-            </div>
-        </div>
-    </section>
-
-
-    <!-- About Us Section (區域) -->
-    <section id="about-us" class="about-us-section">
-        <!-- 背景影片 -->
-        <video autoplay muted loop class="background-video">
-            <source src="./video/Quilt_promo_one.mp4" type="video/mp4">
-            您的瀏覽器不支援影片。
-        </video>
-
-        <!-- 遮罩 -->
-        <div class="mask-container">
-            <div class="mask-layer mask-1">
-                <img src="./img/threerow.svg" alt="Mask 1">
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Our Services區域 -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title">我們的服務</h2>
-            <div class="service-items">
-                <!-- 商業設計 -->
-                <div class="service-item">
-                    <div class="icon-container">
-                        <img src="./img/design.png" alt="商業設計圖標">
-                    </div>
-                    <h3>商業設計</h3>
-                    <p>核心定位、CIS打造，讓企業主清楚了解企業樣貌，有感視覺大升級。</p>
-                </div>
-                <!-- 影音攝錄 -->
-                <div class="service-item">
-                    <div class="icon-container">
-                        <img src="./img/photography.png" alt="影音攝錄圖標">
-                    </div>
-                    <h3>影音攝錄</h3>
-                    <p>企業形象、個人IP、短影音的時代，說清楚講明白，客人自然來，關鍵訊息傳遞，精準有效觸及。</p>
-                </div>
-                <!-- AI程式 -->
-                <div class="service-item">
-                    <div class="icon-container">
-                        <img src="./img/AI.png" alt="AI程式圖標">
-                    </div>
-                    <h3>AI程式</h3>
-                    <p>AI時代，數據轉換為財富，多樣本分析，讓你了解客人思維，讓你看清市場脈絡。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section區域 -->
-    <section id="process" class="process-section">
-        <div class="container">
-            <h2 class="section-title">服務流程</h2>
-            <div class="process-circle">
-                <!-- 步驟 1 -->
-                <div class="step step-1">
-                    <div class="circle red">01</div>
-                    <div class="step-content">
-                        <h3>聆聽紀錄</h3>
-                        <p>一場輕鬆的會談，了解行業目前面臨的問題點。</p>
-                    </div>
-                </div>
-                <!-- 步驟 2 -->
-                <div class="step step-2">
-                    <div class="circle red">02</div>
-                    <div class="step-content">
-                        <h3>梳理問題</h3>
-                        <p>分析與整理，產生條列式會談紀錄，再次確認問題點。</p>
-                    </div>
-                </div>
-                <!-- 步驟 3 -->
-                <div class="step step-3">
-                    <div class="circle red">03</div>
-                    <div class="step-content">
-                        <h3>策略先行</h3>
-                        <p>提供明確的解決方式，大數據分析方案結果，做最有效的執行改善作業提案。</p>
-                    </div>
-                </div>
-                <!-- 步驟 4 -->
-                <div class="step step-4">
-                    <div class="circle red">04</div>
-                    <div class="step-content">
-                        <h3>顧問陪跑</h3>
-                        <p>依照策略方式，輔助業主訓練相關部門或人員，達成策略目的。</p>
-                    </div>
-                </div>
-                <!-- 步驟 5 -->
-                <div class="step step-5">
-                    <div class="circle red">05</div>
-                    <div class="step-content">
-                        <h3>代理操作</h3>
-                        <p>業主也可以選擇由公司代操策略內容，將其訓練過程省略，更快速地讓策略結果呈現。</p>
-                    </div>
-                </div>
-                <!-- 步驟 6 -->
-                <div class="step step-6">
-                    <div class="circle red">06</div>
-                    <div class="step-content">
-                        <h3>永續合作</h3>
-                        <p>兔嘲媒作為專業的策略行銷公司，不斷的與時俱進，使用有效的創意策略，輔助業主前行。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio區域 -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">過往案例</h2>
-            <div class="portfolio-carousel">
-                <div class="portfolio-item" data-aos="fade-right">
-                    <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_1.png" alt="案例1"></a>
-                </div>
-                <!-- 更多案例 -->
-                <div class="portfolio-item" data-aos="fade-right">
-                    <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_13.png" alt="案例2"></a>
-                </div>
-                <div class="portfolio-item" data-aos="fade-right">
-                    <a href="./portfolio.html" target="_blank"><img src="./img/rabbit_8.png" alt="案例3"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 聯絡我們 -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">聯絡我們</h2>
-            <form class="contact-form" action="javascript:Goform()" method="post">
-                <input type="text" name="name" placeholder="姓名" required>
-                <input type="number" name="phone" placeholder="電話" required>
-                <input type="email" name="email" placeholder="電子郵件">
-                <textarea name="message" placeholder="想說的話" required></textarea>
-                <button type="submit" class="btn btn-primary">提交</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- 頁尾 -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 兔嘲媒體整合行銷. All Rights Reserved.</p>
-            <ul class="footer-links">
-                <li><a href="#services">服務</a></li>
-                <li><a href="#portfolio">案例</a></li>
-                <li><a href="#contact">聯絡我們</a></li>
-            </ul>
-        </div>
-    </footer>
-
-    <!-- 置頂按鈕 -->
-    <!-- <a id="arrow" data-st-target="top" data-st-duration="8000" data-st-top="300" data-st-time="1000"></a> -->
-
-
-    <!-- AOS CDN -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- slick CDN -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- bootstrap CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
-
-    <script src="./main.js"></script>
+    <div class="content">
+        <header class="header">
+            <h1>Bravis International</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">關於我們</a></li>
+                    <li><a href="#services">服務項目</a></li>
+                    <li><a href="#contact">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+        
+            <section id="contact">
+                <h2>聯絡我們</h2>
+                <form action="javascript:Goform();">
+                    <input type="text" name="name" placeholder="您的姓名" required>
+                    <input type="text" name="phone" placeholder="您的電話" required>
+                    <input type="email" name="email" placeholder="您的電子郵件" required>
+                    <textarea name="message" placeholder="您的訊息" required></textarea>
+                    <button type="submit">送出</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
 </body>
 
 <script>
