@@ -127,29 +127,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 添加滾動監聽器以啟動動畫
 document.addEventListener("DOMContentLoaded", () => {
+    const aboutSection = document.querySelector('.about-us-section');
     const maskContainer = document.querySelector('.mask-container');
-    const maskLayers = document.querySelectorAll('.mask-layer');
+    const maskLayer = document.querySelector('.mask-layer');
+    const backgroundVideo = document.querySelector('.background-video');
 
-    // Intersection Observer 監控滾動
+    // Intersection Observer 用於觸發放大效果
     const observer = new IntersectionObserver(
         ([entry]) => {
             if (entry.isIntersecting) {
-                maskContainer.classList.add('animate');
+                aboutSection.classList.add('mask-expanded'); // 添加全螢幕類名
             } else {
-                maskContainer.classList.remove('animate');
+                aboutSection.classList.remove('mask-expanded'); // 恢復初始狀態
             }
         },
-        { threshold: 0.5 } // 當區域 50% 進入視窗時觸發
+        { threshold: 0.8 } // 當區域 50% 進入視窗時觸發
     );
 
     observer.observe(maskContainer);
 
-    // 視差效果 - 單獨調整每一層
+    // 視差滾動效果
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
-        maskLayers.forEach((layer, index) => {
-            const offset = scrollTop / (500 * (index + 1)); // 不同層有不同速度
-            layer.style.transform = `translateY(${offset}px)`;
-        });
+        const windowHeight = window.innerHeight;
+        const sectionTop = aboutSection.offsetTop;
+
+        // 計算滾動進度
+        const progress = Math.min(
+            Math.max((scrollTop - sectionTop + windowHeight) / windowHeight, 0),
+            1
+        );
+
+        // 遮罩逐漸放大
+        maskLayer.style.transform = `scale(${1 + progress * 2})`;
+
+        // 當進度接近尾聲，淡出遮罩，淡入背景影片
+        if (progress > 0.9) {
+            backgroundVideo.style.opacity = '1';
+            maskContainer.style.opacity = '0';
+        } else {
+            backgroundVideo.style.opacity = '0';
+            maskContainer.style.opacity = '1';
+        }
     });
 });

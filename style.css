@@ -229,56 +229,66 @@ body {
 
 .about-us-section {
   position: relative;
-  height: 150vh; /* 確保滾動效果有足夠空間 */
-  background-color: #f8f4f0;
+  height: 150vh; /* 確保滾動有足夠空間 */
   overflow: hidden;
+  /* 背景影片 */
+  /* 遮罩容器 */
+}
+.about-us-section .background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
 }
 .about-us-section .mask-container {
   position: sticky;
   top: 0;
+  width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
+  z-index: 2; /* 確保在影片上層 */
+  /* 遮罩放大後的樣式 */
 }
 .about-us-section .mask-container .mask-layer {
-  width: 60%; /* 初始圖片遮罩大小 */
+  width: 30%;
+  aspect-ratio: 1; /* 保持遮罩為正方形 */
   overflow: hidden;
+  -webkit-mask-image: url("./img/threerow.svg");
+          mask-image: url("./img/threerow.svg");
   -webkit-mask-size: contain;
-          mask-size: contain; /* 使用遮罩效果 */
+          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  transition: transform 0.5s ease, -webkit-mask-size 0.3s ease;
-  transition: mask-size 0.3s ease, transform 0.5s ease;
-  transition: mask-size 0.3s ease, transform 0.5s ease, -webkit-mask-size 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8); /* 遮罩顏色，可調整透明度 */
+  transition: transform 1s ease-out, -webkit-mask-size 1s ease-out;
+  transition: mask-size 1s ease-out, transform 1s ease-out;
+  transition: mask-size 1s ease-out, transform 1s ease-out, -webkit-mask-size 1s ease-out;
 }
 .about-us-section .mask-container .mask-layer img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transform: scale(1.1); /* 放大效果 */
-  transition: transform 0.5s ease;
-}
-.about-us-section .mask-container .mask-1 {
-  -webkit-mask-image: url("./img/mask1.svg");
-          mask-image: url("./img/mask1.svg");
-}
-.about-us-section .mask-container .mask-2 {
-  -webkit-mask-image: url("./img/mask2.svg");
-          mask-image: url("./img/mask2.svg");
-}
-.about-us-section .mask-container .mask-3 {
-  -webkit-mask-image: url("./img/mask3.svg");
-          mask-image: url("./img/mask3.svg");
+  transform: scale(1);
+  transition: transform 1s ease-out;
 }
 .about-us-section .mask-container.animate .mask-layer {
+  width: 100%;
+  aspect-ratio: auto;
   -webkit-mask-size: 100%;
-          mask-size: 100%; /* 放大遮罩至全螢幕 */
-  transform: scale(1); /* 縮放動畫 */
+          mask-size: 100%;
+  transform: scale(1);
+}
+.about-us-section .mask-container.animate .mask-layer img {
+  transform: scale(1.2); /* 背景圖片輕微放大 */
 }
 
 .services-section {
