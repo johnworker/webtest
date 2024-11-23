@@ -27,7 +27,8 @@ $mobile: 767px; //手機尺寸
 }
 
 /* styles.css */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -36,3 +37,62 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+.header {
+    background-color: #fdfdf9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        padding: 10px 20px;
+
+        .logo img {
+            max-width: 150px;
+        }
+
+        nav {
+            ul {
+                display: flex;
+                gap: 20px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: #333;
+                        transition: color 0.3s;
+    
+                        &:hover {
+                            color: #555;
+                        }
+                    }
+                }
+            }
+        }
+
+        .reserve-button {
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #555;
+            }
+        }
+    }
+}
