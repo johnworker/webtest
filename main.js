@@ -25,3 +25,44 @@ function showSlides() {
 document.addEventListener('DOMContentLoaded', () => {
     showSlides();
 });
+
+// 雜誌滾動區
+document.querySelector('.view-all-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector('#journal-all');
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+});
+
+// 選單連結區
+document.querySelectorAll('.menu-item').forEach((item, index) => {
+    item.addEventListener('click', () => {
+        switch (index) {
+            case 0:
+                window.location.href = '#price';
+                break;
+            case 1:
+                window.location.href = '#gallery';
+                break;
+            case 2:
+                window.location.href = '#journal';
+                break;
+            case 3:
+                window.location.href = '#access';
+                break;
+        }
+    });
+});
+
+
+// 頁尾區微動畫效果
+document.querySelectorAll('.footer a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});

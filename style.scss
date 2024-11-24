@@ -33,7 +33,6 @@ html {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
@@ -110,14 +109,14 @@ html {
 
     .slider {
         position: relative;
-        width: 1000px;
+        width: 1200px;
         height: 600px;
         margin: 0 auto;
 
         .slide {
             display: none;
             position: absolute;
-            width: 1000px;
+            width: 1200px;
             height: 600px;
             margin: 0 auto;
 
@@ -173,3 +172,280 @@ html {
         }
     }
 }
+
+// 關於我們
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    height: 100%;
+    background-color: #fdfdf9;
+
+    .about-content {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+
+        .about-text {
+            flex: 1;
+            padding-right: 20px;
+
+            h2 {
+                font-size: 2rem;
+                color: #333;
+                border-bottom: 2px solid #333;
+                display: inline-block;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.8;
+                color: #666;
+                margin-bottom: 20px;
+            }
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 50%;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .image-caption {
+                position: absolute;
+                bottom: 10%;
+                left: 5%;
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 10px 15px;
+                border-radius: 5px;
+                font-size: 1rem;
+                color: #333;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// 雜誌區
+.journal {
+    background-color: #fdfdf9;
+    padding: 50px 20px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+    .journal-header {
+        text-align: left;
+        margin-bottom: 30px;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            border-left: 5px solid #333;
+            padding-left: 10px;
+            color: #333;
+            writing-mode: vertical-lr;
+            margin: 0 auto;
+        }
+    }
+
+    .journal-content {
+        display: flex;
+        gap: 20px;
+
+        .journal-item {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            h3 {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #333;
+                margin: 15px 0 5px;
+                padding: 0 10px;
+            }
+
+            p {
+                font-size: 0.9rem;
+                color: #777;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .journal-footer {
+        text-align: center;
+        margin-top: 20px;
+
+        .view-all-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #555;
+            }
+        }
+    }
+}
+
+// 選單連結區
+.menu {
+    background-color: #fdfdf9;
+    padding: 50px 20px;
+    text-align: center;
+
+    .menu-header {
+        margin-bottom: 30px;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            display: inline-block;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+    }
+
+    .menu-items {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        .menu-item {
+            text-align: center;
+            transition: transform 0.3s;
+            display: grid;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            img {
+                width: 100px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #555;
+                margin: 0;
+                text-transform: uppercase;
+                border-top: 1px solid #333;
+                display: inline-block;
+                padding-top: 5px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+// 頁尾區
+.footer {
+    background-color: #fdfdf9;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+  
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+  
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0 20px;
+  
+          li {
+            margin-bottom: 10px;
+  
+            a {
+              text-decoration: none;
+              color: #333;
+              font-size: 0.9rem;
+              transition: color 0.3s;
+  
+              &:hover {
+                color: #555;
+              }
+            }
+          }
+        }
+      }
+  
+      .footer-logo {
+        img {
+          width: 100px;
+          height: auto;
+        }
+      }
+  
+      .footer-copyright {
+        p {
+          font-size: 0.8rem;
+          color: #777;
+        }
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+  
+        .footer-links {
+          flex-direction: row;
+          justify-content: center;
+  
+          ul {
+            margin: 0 10px;
+  
+            li {
+              margin-bottom: 5px;
+            }
+          }
+        }
+  
+        .footer-logo {
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+  
